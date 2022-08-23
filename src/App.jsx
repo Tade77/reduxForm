@@ -11,19 +11,22 @@ const App = () => {
     e.preventDefault();
     const formEl = e.target;
     const userData = {
-      userFullname: formEl.username.value,
-      mail: formEl.email.value,
+      name: formEl.username.value,
+      email: formEl.email.value,
+      contact: formEl.number.value,
+      comment: formEl.comment.value,
       // password: formEl.password.value,
     };
     // userData.reset();
     dispatch(addUserForm(userData));
     // console.log(userData);
+    e.target.reset();
   };
 
   return (
-    <div>
+    <aside className="app">
       <form onSubmit={handleSubmit}>
-        <h1 style={{ margin: "50px" }}>User Form Input</h1>
+        <h1 style={{ margin: "50px" }}>User Form</h1>
 
         <div
           style={{
@@ -43,23 +46,34 @@ const App = () => {
             <span>email</span>
             <input name="email" required />
           </label>
+          <label>
+            <span>Phone Number</span>
+            <input name="number" required />
+          </label>
+          <label>
+            <span>leave your comment</span>
+            <textarea name="comment" />
+          </label>
         </div>
         <button style={{ width: "60px", marginLeft: "80px" }} type="submit">
           Submit
         </button>
       </form>
-      <h1>User</h1>
-      <div>
+      <div className="output">
+        <h1>Users</h1>
+        <span>{JSON.stringify(users, null, 2)}</span>
+        {/* <div>
         {users.map((user) => {
           return (
             <div key={user.userFullname}>
-              <p>Fullname: {user.userFullname}</p>
-              <p>email: {user.mail}</p>
+            <p>Fullname: {user.userFullname}</p>
+            <p>email: {user.mail}</p>
             </div>
-          );
-        })}
+            );
+          })}
+        </div> */}
       </div>
-    </div>
+    </aside>
   );
 };
 

@@ -1,0 +1,11 @@
+.app {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.output {
+  flex-direction: column;
+}
+h1 {
+  text-align: center;
+}
