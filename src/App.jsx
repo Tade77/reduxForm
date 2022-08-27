@@ -5,7 +5,7 @@ import "./App.css";
 console.log({ addUserForm });
 
 const App = () => {
-  const users = useSelector((state) => state.formSlice);
+  const users = useSelector((state) => state.formSlice.users);
   const dispatch = useDispatch();
   const handleSubmit = (e) => {
     e.preventDefault();

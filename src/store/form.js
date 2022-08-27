@@ -1,12 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const initialState = {
+  users: [],
+};
 const formSlice = createSlice({
   name: "userForm",
-  initialState: [],
+  initialState,
   reducers: {
     addUserForm(state, action) {
       const userInfo = action.payload;
-      state.push(userInfo);
+      state.users.push(userInfo);
     },
   },
 });
