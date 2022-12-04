@@ -2,10 +2,74 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  flex-direction: column;
 }
 .output {
-  flex-direction: column;
+  flex-direction: row;
+  width: 50%;
 }
 h1 {
   text-align: center;
+}
+span,
+label {
+  display: flex;
+  flex-direction: column;
+}
+.forms {
+}
+.user--form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  margin-top: 2rem;
+  /* margin: 50px; */
+}
+.modalBg {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* right: 0; */
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.modal {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  height: 300px;
+  width: 300px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: rgba(243, 241, 241, 0.2) 3px 5px 1px;
+}
+.btn--x {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+.cancel--btn,
+.submit--btn {
+  padding: 8px 20px;
+  border-radius: 20px 20px 20px 20px;
+}
+.cancel--btn {
+  background-color: rgba(238, 22, 22, 0.9);
+  color: white;
+}
+.submit--btn {
+  background-color: rgba(19, 221, 19, 0.9);
+  color: white;
+}
+.footer > .cancel--btn {
+  margin-right: 1rem;
 }
